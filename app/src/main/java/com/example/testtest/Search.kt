@@ -2,6 +2,7 @@ package com.example.testtest
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build.VERSION_CODES.S
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
@@ -23,6 +24,8 @@ class Search : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerview)
         searchView = findViewById(R.id.searchView)
 
+
+
             recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         // ArrayList of class ItemsViewModel
@@ -38,7 +41,6 @@ class Search : AppCompatActivity() {
                 )
             )
         }
-
 
         val apiInterface = ApiInterface.create().getMovies("02b113b496621e5a49428c55c55a3ccc")
 
@@ -70,7 +72,19 @@ class Search : AppCompatActivity() {
             }
         })
 
-    }
+
+//        searchView.setOnQueryTextListener((object : SearchView.OnQueryTextListener{
+////            override fun onQueryTextSubmit(query: String?): Boolean {
+////            }
+////
+////            override fun onQueryTextChange(newText: String?): Boolean {
+////                TODO("Not yet implemented")
+////            }
+////        }))
+////
+////    }
+
+
 
 //    override fun onBackPressed() {
 //        val intent = Intent(this@Search, MainActivity::class.java)
